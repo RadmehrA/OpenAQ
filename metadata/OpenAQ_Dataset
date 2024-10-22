@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+<http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6> a dcat:Resource,
+    dcat:Dataset;
+  <http://www.w3.org/2000/01/rdf-schema#label> "OpenAQ";
+  dcterms:title "OpenAQ";
+  dcat:version "1.0.0", "1.0.3";
+  <https://w3id.org/fdp/fdp-o#metadataIssued> "2024-10-19T12:24:28.892593097Z"^^xsd:dateTime;
+  <https://w3id.org/fdp/fdp-o#metadataModified> "2024-10-22T08:04:09.827398718Z"^^xsd:dateTime;
+  dcterms:license <http://purl.org/NET/rdflicense/cc-zero1.0>;
+  dcterms:description "OpenAQ is an open-source project to surface live, real-time air quality data from around the world. ";
+  dcterms:conformsTo <http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604>,
+    <http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604>;
+  dcterms:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  <https://w3id.org/fdp/fdp-o#metadataIdentifier> <http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6#identifier>;
+  dcterms:accessRights <http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6#accessRights>;
+  dcterms:publisher [ a foaf:Agent;
+      foaf:name "Open Air Quality"
+    ];
+  dcterms:isPartOf <http://localhost:8080/catalog/96c0bc01-5983-4e69-abc1-fc16518c0535>;
+  <http://semanticscience.org/resource/SIO_000628> <http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6/metrics/445c0a70d1e214e545b261559e2842f4>,
+    <http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6/metrics/5d27e854a9e78eb3f663331cd47cdc13>;
+  dcat:theme <https://ontobee.org/ontology/ENVO>;
+  dcat:distribution <http://localhost:8080/distribution/e312cbe0-eb4c-41a7-96ce-7e1fbbe18d9a>,
+    <http://localhost:8080/distribution/24e193d6-7426-4019-9391-ac981a95ed9b> .
+
+<http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6#identifier> a
+    <http://purl.org/spar/datacite/Identifier>;
+  dcterms:identifier "http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6" .
+
+<http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6#accessRights>
+  a dcterms:RightsStatement;
+  dcterms:description "This resource has no access restriction" .
+
+<http://localhost:8080/distribution/> a ldp:DirectContainer, ldp:DirectContainer;
+  dcterms:title "Distributions", "Distributions";
+  ldp:contains <http://localhost:8080/distribution/e312cbe0-eb4c-41a7-96ce-7e1fbbe18d9a>,
+    <http://localhost:8080/distribution/24e193d6-7426-4019-9391-ac981a95ed9b>, <http://localhost:8080/distribution/e312cbe0-eb4c-41a7-96ce-7e1fbbe18d9a>,
+    <http://localhost:8080/distribution/24e193d6-7426-4019-9391-ac981a95ed9b>;
+  ldp:hasMemberRelation dcat:distribution, dcat:distribution;
+  ldp:membershipResource <http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6>,
+    <http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6> .
+
+<http://localhost:8080/profile/2f08228e-1789-40f8-84cd-28e3288c3604> <http://www.w3.org/2000/01/rdf-schema#label>
+    "Dataset Profile", "Dataset Profile" .
+
+<http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6/metrics/445c0a70d1e214e545b261559e2842f4>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.ietf.org/rfc/rfc3986.txt>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.ietf.org/rfc/rfc3986.txt> .
+
+<http://localhost:8080/dataset/6dc2b1d9-835f-4fca-a367-d5d1a0d15dc6/metrics/5d27e854a9e78eb3f663331cd47cdc13>
+  <http://semanticscience.org/resource/SIO_000628> <https://www.wikidata.org/wiki/Q8777>;
+  <http://semanticscience.org/resource/SIO_000332> <https://www.wikidata.org/wiki/Q8777> .
