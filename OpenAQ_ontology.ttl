@@ -1,0 +1,304 @@
+@prefix : <http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/> .
+
+<https://w3id.org/FAIR-course-UT/2024-2025/10/ont#> rdf:type owl:Ontology ;
+                                                     owl:versionIRI <https://w3id.org/FAIR-course-UT/2024-2025/10/ont#> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:domain :Air_pollution_measurement ;
+          rdfs:range :Pollutant ;
+          rdfs:comment "The predicate that relates Domain: (blank)_Cell to Range: Pollutant, indicating that the (blank)_Cell as a nested node containts Pollutant (pollutant type)" ;
+          rdfs:label "contains" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/hasCode
+:hasCode rdf:type owl:ObjectProperty ;
+         rdfs:domain :Country ;
+         rdfs:range :Country_Code ;
+         rdfs:comment "The predicate that relates Domain: Country Lable to Range: Country Code, indicating that the Country Lable hasCode Country Code (i.e. Germany hasCode DE)" ;
+         rdfs:label "hasCode" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/hasSource
+:hasSource rdf:type owl:ObjectProperty ;
+           rdfs:domain :Air_Quality_Monitoring ;
+           rdfs:range :Source_Name ;
+           rdfs:comment "The predicate that relates Domain: particulate matter air pollution measurement to Range: Source Name, indicating that the particulate matter air pollution measurement measurements are comin from which Source" ;
+           rdfs:label "hasSource" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/hasUnit
+:hasUnit rdf:type owl:ObjectProperty ;
+         rdfs:domain :Air_pollution_measurement ;
+         rdfs:range :Unit ;
+         rdfs:comment "The predicate that relates Domain:(blank)_Cell to Range:Unit, indicating that the (blank)_Cell as a nested node hasUnit Unit" ;
+         rdfs:label "hasUnit" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :City ;
+           rdfs:range :Country ;
+           rdfs:comment "The predicate that relates Domain: City to Range: Counry Label, indicating that the City is locatedIn Country Label" ;
+           rdfs:label "locatedIn" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/measures
+:measures rdf:type owl:ObjectProperty ;
+          rdfs:domain :Air_Quality_Monitoring ;
+          rdfs:range :Air_pollution_measurement ;
+          rdfs:comment "The predicate that relates Domain:particulate matter air pollution measurement to Range:(blank)_Cell, indicating that the particulate matter air pollution measurement mesures the nested node (blank)_Cell" ;
+          rdfs:label "measures" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/occursIn
+:occursIn rdf:type owl:ObjectProperty ;
+          rdfs:domain :Air_Quality_Monitoring ;
+          rdfs:range :Location ;
+          rdfs:comment "The predicate that relates Domain:particulate matter air pollution measurement to Range:Location, indicating that the particulate matter air pollution measurement occurs in the Location" ;
+          rdfs:label "occursIn" .
+
+
+###  https://w3id.org/FAIR-course-UT/2024-2025/10/ont#hasCity
+:hasCity rdf:type owl:ObjectProperty ;
+         rdfs:domain :Location ;
+         rdfs:range :City ;
+         rdfs:comment "The predicate that relates Domain:Location to Range:City, indicating that the Location is locatedIn City" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/hasCoordination
+:hasCoordination rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Location ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "Indicates the Coordinates in type decimal" ;
+                 rdfs:label "hasCoordination" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/hasValue
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Air_pollution_measurement ;
+          rdfs:range xsd:decimal .
+
+
+###  https://w3id.org/FAIR-course-UT/2024-2025/10/ont#dateModified
+:dateModified rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Air_Quality_Monitoring ;
+              rdfs:range xsd:dateTimeStamp ;
+              rdfs:comment "Date on which the resource was changed." ;
+              rdfs:label "dateModified" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Air_Quality_Monitoring
+:Air_Quality_Monitoring rdf:type owl:Class ;
+                        rdfs:comment "OpenAQ Air Quality Monitoring: An open, real-time air quality data hub for the world" ;
+                        rdfs:label "Air Quality Monitoring" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Air_pollution_measurement
+:Air_pollution_measurement rdf:type owl:Class ;
+                           rdfs:comment "Process of collecting and measuring the components of air pollution" ;
+                           rdfs:label "Air pollution measurement" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/City
+:City rdf:type owl:Class ;
+      rdfs:comment "The city or town associated with the address of the object. cf. vcard:locality" ;
+      rdfs:label "City" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Country
+:Country rdf:type owl:Class ;
+         rdfs:comment "The name of the country or major administrative unit in which the Location occurs." ;
+         rdfs:label "Country" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Country_Code
+:Country_Code rdf:type owl:Class ;
+              rdfs:comment "An alphanumeric system designed to identify countries. The ISO 3166 standard includes a two letter representation, a three letter representation, and a 3 number representation. The last two are identical to the UN system. The US State Department system maintains a separate two letter representation code set." ;
+              rdfs:label "Country Code" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Location
+:Location rdf:type owl:Class ;
+          rdfs:comment "Representing a named geographical place" ;
+          rdfs:label "Location" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Pollutant
+:Pollutant rdf:type owl:Class ;
+           rdfs:comment "Any chemical compound, biological object, physical factor in a concentration or amount that adversely alters the physical, chemical, or biological properties of the environment. The term includes pathogens, toxic metals, carcinogens, oxygen-demanding materials, radiation, natural substances, synthetic industrial chemicals, biocides and all other harmful substances and factors. (NCI)" ;
+           rdfs:label "Pollutant" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Source_Name
+:Source_Name rdf:type owl:Class ;
+             rdfs:comment "The name of the center or institution that provided an item." ;
+             rdfs:label "Source Name" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Unit
+:Unit rdf:type owl:Class ;
+      rdfs:comment "A unit of measurement is a definite magnitude of a physical quantity, defined and adopted by convention and/or by law, that is used as a standard for measurement of the same physical quantity." ;
+      rdfs:label "Unit" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Airgradient
+:Airgradient rdf:type owl:NamedIndividual ,
+                      :Source_Name ;
+             rdfs:comment "An instanse of class Source Name" ;
+             rdfs:label "Airgradient" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/CO
+:CO rdf:type owl:NamedIndividual ,
+             :Pollutant ;
+    rdfs:comment "An instance of class Pollutant" ;
+    rdfs:label "CO" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/EEA
+:EEA rdf:type owl:NamedIndividual ,
+              :Source_Name ;
+     rdfs:comment "An instance of class Source Name" ;
+     rdfs:label "EEA" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/EEA_France
+:EEA_France rdf:type owl:NamedIndividual ,
+                     :Source_Name ;
+            rdfs:comment "An instance of class Source Name" ;
+            rdfs:label "EEA France" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/EEA_Germany
+:EEA_Germany rdf:type owl:NamedIndividual ,
+                      :Source_Name ;
+             rdfs:comment "An instance of class Source Name" ;
+             rdfs:label "EEA Germany" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/GIOS
+:GIOS rdf:type owl:NamedIndividual ,
+               :Source_Name ;
+      rdfs:comment "An instance of class Source Name" ;
+      rdfs:label "GIOS" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/NO
+:NO rdf:type owl:NamedIndividual ,
+             :Pollutant ;
+    rdfs:comment "An instance of class Pollutant" ;
+    rdfs:label "NO" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/NO2
+:NO2 rdf:type owl:NamedIndividual ,
+              :Pollutant ;
+     rdfs:comment "An instance of class Pollutant" ;
+     rdfs:label "NO2" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/O3
+:O3 rdf:type owl:NamedIndividual ,
+             :Pollutant ;
+    rdfs:comment "An instance of class Pollutant" ;
+    rdfs:label "O3" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/PM1
+:PM1 rdf:type owl:NamedIndividual ,
+              :Pollutant ;
+     rdfs:comment "An instance of class Pollutant" ;
+     rdfs:label "PM1" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/PM10
+:PM10 rdf:type owl:NamedIndividual ,
+               :Pollutant ;
+      rdfs:comment "An instance of class Pollutant" ;
+      rdfs:label "PM10" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/PM2.5
+:PM2.5 rdf:type owl:NamedIndividual ,
+                :Pollutant ;
+       rdfs:comment "An instance of class Pollutant" ;
+       rdfs:label "PM2.5" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/RelativeHumidity
+:RelativeHumidity rdf:type owl:NamedIndividual ,
+                           :Pollutant ;
+                  rdfs:comment "An instance of class Pollutant" ;
+                  rdfs:label "RelativeHumidity" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/SO2
+:SO2 rdf:type owl:NamedIndividual ,
+              :Pollutant ;
+     rdfs:label "SO2" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/Temperature
+:Temperature rdf:type owl:NamedIndividual ,
+                      :Pollutant ;
+             rdfs:label "Temperature" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/UM003
+:UM003 rdf:type owl:NamedIndividual ,
+                :Pollutant ;
+       rdfs:label "UM003" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/c
+:c rdf:type owl:NamedIndividual ,
+            :Unit ;
+   rdfs:comment "An instance of class Unit" ;
+   rdfs:label "c" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/microGramPerCubicMeter
+:microGramPerCubicMeter rdf:type owl:NamedIndividual ,
+                                 :Unit ;
+                        rdfs:comment "An instance of class Unit" ;
+                        rdfs:label "microGramPerCubicMeter" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/particlesPerCubicCentimeter
+:particlesPerCubicCentimeter rdf:type owl:NamedIndividual ,
+                                      :Unit ;
+                             rdfs:comment "An instance of class Unit" ;
+                             rdfs:label "particlesPerCubicCentimeter" .
+
+
+###  http://www.semanticweb.org/radmehr/ontologies/2024/9/untitled-ontology-36/percentage
+:percentage rdf:type owl:NamedIndividual ,
+                     :Unit ;
+            rdfs:comment "An instance of class Unit" ;
+            rdfs:label "percentage" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
